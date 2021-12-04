@@ -9,7 +9,6 @@
 </script>
 
 <script>
-	import { base } from '$app/paths';
 	import Slider from '$lib/Slider.svelte';
 	import GithubCorner from '$lib/GithubCorner.svelte';
 
@@ -56,6 +55,11 @@
 		}
 	}
 </script>
+
+<svelte:head>
+  <title>EmojiMix</title>
+  <link rel="icon" href="{base}/favicon.png" />
+</svelte:head>
 
 <GithubCorner />
 

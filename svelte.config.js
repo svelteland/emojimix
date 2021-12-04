@@ -7,8 +7,8 @@ const config = {
 
 		// Comment the paths if wants to run in dev mode.
 		paths: {
-			base: '/emojimix',
-			assets: '/emojimix'
+			base: "/emojimix",
+			assets: "/emojimix"
 		},
 
 		// hydrate the <div id="svelte"> element in src/app.html
