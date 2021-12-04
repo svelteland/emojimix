@@ -1,7 +1,7 @@
-# EmojiMix
+# 🤖 emojimix 🤖
 
-An open sourced implementation of EmojiMix in Svelte!
+An open sourced implementation of emojimix in Svelte!
 
 <p align="center">
-  <img src="./img/show.gif" style="max-width:400px;"/>
+  <img src="./img/show.gif" style="width:400px;"/>
 </p>
