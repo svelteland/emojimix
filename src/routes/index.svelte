@@ -120,7 +120,7 @@
 	</div>
 
 	<p class="emojimix-text">
-		All graphics by Google. Origin webset by <a href="https://tikolu.net/emojimix/">Tikolu</a>
+		All graphics by Google. Origin website by <a href="https://tikolu.net/emojimix/">Tikolu</a>
 	</p>
 </div>
 
