@@ -23,7 +23,7 @@
 		});
 		splide.on('moved', function (index, prev, dest) {
 			if (index != prev) {
-				$: value = dest;
+				value = dest;
 			}
 		});
 		splide.mount();
