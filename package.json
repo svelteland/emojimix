@@ -3,8 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "rm -rf .svelte-kit/static/ && svelte-kit build && touch .svelte-kit/static/build/.nojekyll",
-		"deploy": "npm run build && npx gh-pages -d .svelte-kit/static/build/ -t true",
+		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -25,6 +24,7 @@
 	"type": "module",
 	"dependencies": {
 		"@splidejs/splide": "^3.6.9",
-		"@splidejs/svelte-splide": "^0.1.15"
+		"@splidejs/svelte-splide": "^0.1.15",
+		"animejs": "^3.2.1"
 	}
 }

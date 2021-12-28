@@ -6,13 +6,13 @@ const config = {
 		adapter: static_adapter(),
 
 		// Comment the paths if wants to run in dev mode.
-		paths: {
-			base: "/emojimix",
-			assets: "/emojimix"
-		},
+		// paths: {
+		// 	base: "/emojimix",
+		// 	assets: "/emojimix"
+		// },
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
 	}
 };
 

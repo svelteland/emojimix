@@ -12,6 +12,8 @@
 	import Slider from '$lib/Slider.svelte';
 	import GithubCorner from '$lib/GithubCorner.svelte';
 
+	import anime from 'animejs';
+
 	export let emojis;
 
 	// This is from github.com/googlefont/noto-emoji
@@ -35,16 +37,40 @@
 
 	let notFoundImg = `${base}/not_found.png`;
 
-	function handleLoading() {
-		if (this.src.endsWith(notFoundImg)) {
-			this.style.width = '50%';
-		} else {
-			this.style.width = '100%';
+	function updateSrc(node, src) {
+		node.src = src
+		return {
+			update(src) {
+				// the value of `bar` has changed
+				anime({
+					targets: "#emojimix-result img",
+					width: 0,
+					duration: 150,
+					easing: 'easeOutQuad',
+					complete: function(anim) {
+						if (anim.complete) {
+							node.src = src
+						}
+					}
+				})
+			},
 		}
 	}
 
+	function handleLoading() {
+    let targetWidth = '100%'
+    if (this.src.endsWith(notFoundImg)) {
+			targetWidth = '50%';
+		}
+		anime({
+			targets: "#emojimix-result img",
+			width: targetWidth,
+			duration: 150,
+			easing: 'easeInQuad',
+		})
+	}
+
 	function handleNotLoading() {
-		console.log('not loaded');
 		this.onerror = null;
 		switch (this.src) {
 			case emojimixLink:
@@ -57,8 +83,8 @@
 </script>
 
 <svelte:head>
-  <title>EmojiMix</title>
-  <link rel="icon" href="{base}/favicon.png" />
+	<title>EmojiMix</title>
+	<link rel="icon" href="{base}/favicon.png" />
 </svelte:head>
 
 <GithubCorner />
@@ -86,10 +112,10 @@
 	<div id="emojimix-result">
 		<img
 			alt=""
-			src={emojimixLink}
 			loading="lazy"
 			on:error={handleNotLoading}
 			on:load={handleLoading}
+			use:updateSrc={emojimixLink}
 		/>
 	</div>
 
